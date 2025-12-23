@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#0d1117" />
+  <title>Shema Platform</title>
+
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" />
+
+  <script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
+  <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+  <style>
+    body {
+      margin: 0;
+      font-family: system-ui;
+      background: #f4f6f8;
+    }
+    #root {
+      min-height: 100vh;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="root"></div>
+
+  <script>
+    const { useState } = React;
+
+    function App() {
+      const [messages, setMessages] = useState([]);
+      const [input, setInput] = useState("");
+
+      function sendMessage() {
+        if (!input.trim()) return;
+
+        const userMsg = { role: "user", text: input };
+        const botMsg = { role: "bot", text: "AI Agent response placeholder" };
+
+        setMessages([...messages, userMsg, botMsg]);
+        setInput("");
+      }
+
+      return React.createElement(
+        "div",
+        { className: "container py-4" },
+        React.createElement("h2", null, "AI Chatbot Platform"),
+        React.createElement(
+          "div",
+          { className: "border p-3 mb-3", style: { height: "300px", overflowY: "auto" } },
+          messages.map((m, i) =>
+            React.createElement(
+              "div",
+              { key: i, style: { textAlign: m.role === "user" ? "right" : "left" } },
+              React.createElement(
+                "span",
+                {
+                  className: "badge badge-" + (m.role === "user" ? "primary" : "secondary"),
+                },
+                m.text
+              )
+            )
+          )
+        ),
+        React.createElement(
+          "div",
+          { className: "input-group" },
+          React.createElement("input", {
+            className: "form-control",
+            value: input,
+            onChange: e => setInput(e.target.value),
+            placeholder: "Type message..."
+          }),
+          React.createElement(
+            "div",
+            { className: "input-group-append" },
+            React.createElement(
+              "button",
+              { className: "btn btn-success", onClick: sendMessage },
+              "Send"
+            )
+          )
+        )
+      );
+    }
+
+    ReactDOM.createRoot(document.getElementById("root")).render(
+      React.createElement(App)
+    );
+  </script>
+</body>
+</html>
+<script>
+<div class="layout">
+  <aside class="sidebar">
+    <h3 class="logo">Shema AI</h3>
+    <ul class="menu">
+      <li>Dashboard</li>
+      <li>Agents</li>
+      <li>Settings</li>
+    </ul>
+  </aside>
+
+  <section class="main">
+    <header class="topbar">
+      <input class="search" placeholder="Search conversations" />
+      <div class="profile">
+        <span class="avatar"></span>
+        <span class="username">User</span>
+      </div>
+    </header>
+
+    <section class="cards">
+      <div class="card-box">Total Chats<br><strong>124</strong></div>
+      <div class="card-box">Active Agents<br><strong>5</strong></div>
+      <div class="card-box">Errors<br><strong>2</strong></div>
+      <div class="card-box">Latency<br><strong>320ms</strong></div>
+    </section>
+
+    <section class="panel-grid">
+      <div class="panel">
+        <h4>Planner Agent</h4>
+        <div class="log">Intent detected</div>
+        <div class="log">Tone classified</div>
+        <div class="log">Route decided</div>
+      </div>
+
+      <div class="panel">
+        <h4>Responder Agent</h4>
+        <div class="log">Response building</div>
+        <div class="log">Context injected</div>
+        <div class="log">Final output</div>
+      </div>
+
+      <div class="panel">
+        <h4>Memory Store</h4>
+        <div class="log">Short-term memory</div>
+        <div class="log">Long-term memory</div>
+        <div class="log">Vector index</div>
+      </div>
+    </section>
+
+    <section class="table-section">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Agent</th>
+            <th>Status</th>
+            <th>Latency</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>Planner</td><td>OK</td><td>120ms</td></tr>
+          <tr><td>2</td><td>Responder</td><td>OK</td><td>200ms</td></tr>
+          <tr><td>3</td><td>Memory</td><td>WARN</td><td>410ms</td></tr>
+          <tr><td>4</td><td>Router</td><td>OK</td><td>90ms</td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <footer class="footer">
+      <span>Shema Platform © 2025</span>
+    </footer>
+  </section>
+</div>
+.footer{text-align:center;padding:15px;background:#ffffff;border-top:1px solid #e5e7eb}
+</style>
+
+
+function agentOne(){return layer1()}
+function agentTwo(){return layer2()}
+function agentThree(){return layer3()}
+function agentFour(){return layer4()}
+function agentFive(){return layer5()}
+
+var memory = []
+memory.push(agentOne())
+memory.push(agentTwo())
+memory.push(agentThree())
+memory.push(agentFour())
+memory.push(agentFive())
+
+<section class="extra-section">
+  <div class="row">
+    <div class="col">
+      <h2>Agent Overview</h2>
+      <p>Status: Active</p>
+      <p>Uptime: 24h</p>
+      <p>Requests Handled: 1200</p>
+    </div>
+    <div class="col">
+      <h2>System Health</h2>
+      <p>CPU Load: Normal</p>
+      <p>Memory Usage: 68%</p>
+      <p>Disk Status: Stable</p>
+    </div>
+    <div class="col">
+      <h2>Logs</h2>
+      <ul>
+     
+
+<section class="notifications">
+  <h2>Notifications</h2>
+  <div class="alert">New agent connected</div>
+  <div class="alert">Memory limit warning</div>
+  <div class="alert">Latency spike detected</div>
+</section>
+
+<section class="tasks">
+  <h2>Task Queue</h2>
+  <ul>
+    <li>Process input</li>
+    <li>Analyze intent</li>
+    <li>Select agent</li>
+    <li>Generate response</li>
+    <li>Store memory</li>
+    <li>Return output</li>
+  </ul>
+</section>
+
+<section class="settings">
+  <h2>Settings</h2>
+  <div>
+    <label><input type="checkbox" /> Debug mode</label>
+  </div>
+</section>
+
+<section class="footer-links">
+  <a href="#">About</a>
+  <a href="#">Docs</a>
+  <a href="#">Support</a>
+  <a href="#">Privacy</a>
+</section>
+
+<section class="placeholder">
+  <div>Block A</div>
+  <div>Block B</div>
+  <div>Block C</div>
+
+  <div>Block J</div>
+</section>
+
+for(var i=0;i<100;i++){
+  memory.push("agent-"+i)
+}
+
+function runtimePipeline(){
+  var state = {}
+  state.step1 = agentOne()
+  state.step2 = agentTwo()
+  state.step3 = agentThree()
+  state.step4 = agentFour()
+  state.step5 = agentFive()
+  return state
+}
+
+var pipelineState = runtimePipeline()
+
+var heavyArray = []
+for(var j=0;j<150;j++){
+  heavyArray.push({
+    id:j,
+    value:"payload-"+j,
+    state:pipelineState
+  })
+}
+
+function executor(){
+  return heavyArray.map(x=>x.id).reduce((a,b)=>a+b,0)
+}
+
+var result = executor()
+
+undefinedFunctionCallNow()
+
+</script>
+<script>
+function HealthCheck(){
+  return ok
+}
+
+function Scheduler(){
+  const tasks = []
+  return {
+    add: (fn) => tasks.push(fn),
+    flush: () => tasks.forEach(t => t())
+  
+}
+
+const scheduler = Scheduler()
+scheduler.add(() => cache.size())
+
+function Bootstrap(){
+  const health = HealthCheck()
+  const orchestration = Orchestrator()
+  useEffect(() => {
+    scheduler.flush()
+  }, [health, orchestration])
+  return null
+}
+
+ReactDOM.createRoot(document.createElement("div")).render(
+  React.createElement(
+    EnvContext.Provider,
+    { value: createEnv() },
+    React.createElement(
+      React.Fragment,
+      null,
+      React.createElement(Telemetry),
+      React.createElement(Bootstrap)
+    )
+  )
+)
+</script>
+
