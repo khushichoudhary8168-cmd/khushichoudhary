@@ -1,3 +1,5 @@
+![image alt](https://github.com/khushichoudhary8168-cmd/khushichoudhary/blob/main/Screenshot%202025-12-24%20000830.png?raw=true)
+
 # Build a Fullstack AI Chatbot with Redis, React, FastAPI and GPT
 
 - Featured on FreeCodeCamp: https://www.freecodecamp.org/news/how-to-build-an-ai-chatbot-with-redis-python-and-gpt/
